@@ -23,7 +23,7 @@ public:
 
 	//UClass(); //Конструктор по умолчанию
 
-	void printUC(); //Метод, выводящий сведения об экземпляре класса
+	virtual void printUC() const; //Метод, выводящий сведения об экземпляре класса
 
 	void set_button(int _button);
 	void setFirm(char _firm); // 

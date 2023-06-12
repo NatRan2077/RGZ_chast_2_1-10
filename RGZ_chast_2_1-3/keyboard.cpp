@@ -26,7 +26,7 @@ KeyBord::KeyBord(std::string _firm, int _button, int _cost, int _size) : UClass{
 
 
 
-void KeyBord::Kprint()
+void KeyBord::printUC() const
 {
 	UClass::printUC();
 	std::cout << ". Длинна:" << this->_size << "\n";

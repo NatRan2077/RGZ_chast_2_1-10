@@ -18,13 +18,9 @@ UClass::UClass(int _button, std::string _firm, int _cost)
 }
 
 
-// дефолт поля потом отвалятся 
 
-//UClass::UClass(int _button, std::string _firm, int _cost) {
-//	init(_button ,_firm, _cost);
-//}
 
-void UClass::printUC()
+void UClass::printUC() const
 {
 	std::cout << "Фирма - производитель: " << this->_firm << ". Цена:" << this->_cost << ". Knopki:" << this->_button <<"\n";
 }

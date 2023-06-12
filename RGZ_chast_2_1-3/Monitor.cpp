@@ -15,7 +15,7 @@ Monik::Monik(std::string _firm, int _button, int _cost, int _Gz) : UClass{ _butt
 
 
 
-void Monik::Kprint()
+void Monik::printUC() const
 {
 	UClass::printUC();
 	std::cout << ". Gz:" << this->_Gz << "\n";
