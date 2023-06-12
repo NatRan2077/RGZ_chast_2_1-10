@@ -1,48 +1,42 @@
 #include "Keyboard.h"
+#include "UltraClass.h"
 
-
-void KeyBord::init(std::string Kfirm, int Kbutton, int Kcost, int size)
+void KeyBord::init(std::string _firm, int _button, int _cost, int _size)
 {
-	if (Kfirm == "") throw std::invalid_argument("Название фирмы пустое.");
-	if (Kbutton < 0) throw std::domain_error("Неккоректное количество  кнопок.");
-	if (Kcost <= 0) throw std::domain_error("Неккоректная цена.");
-	if (size <= 0) throw std::domain_error("Неккоректная цена.");
-	this->Kfirm = Kfirm;
-	this->Kbutton = Kbutton;
-	this->Kcost = Kcost;
-	this->size = size;
+	UClass::init(_button,_firm, _cost);
+	if (_size < 0) throw std::domain_error("Неккоректная цена.");
+	this->_size = _size;
 }
 
-KeyBord::KeyBord(std::string Kfirm, int Kbutton, int Kcost, int size)
+KeyBord::KeyBord(std::string _firm, int _button, int _cost, int _size) : UClass{ _button, _firm, _cost}
 {
-	init(Kfirm, Kbutton, Kcost, size);
+
+	init(_firm, _button, _cost, _size);
 }
 
-KeyBord::KeyBord(KeyBord& m) {
-	init(m.Kfirm, m.Kbutton, m.Kcost, m.size);
-}
+
 // дефолт поля потом отвалятся 
-KeyBord::KeyBord() {
-	this->Kfirm = "NoNamek";
-	this->Kbutton = 0;
-	this->Kcost = 0;
-	this->size = 0;
-}
+
+//KeyBord::KeyBord() {
+//	this->_firm = "NoNamek";
+//	this->_button = 0;
+//	this->_cost = 0;
+//	this->_size = 0;
+//}
 
 
 
 void KeyBord::Kprint()
 {
-	std::cout << "Фирма - производитель: " << this->Kfirm << ". Количество кнопок:" << this->Kbutton << ". Цена:" << this->Kcost << ". Герцов:" << this->size << "\n";
+	UClass::printUC();
+	std::cout << ". Длинна:" << this->_size << "\n";
 }
 
 
-void KeyBord::setCoastK(int Kcost)
+
+void KeyBord::setSize()
 {
-	init(this->Kfirm, this->Kbutton,this-> size ,Kcost);
-}
-void KeyBord::setSize(int size)
-{
-	init(this->Kfirm, this->Kbutton, size, this->Kcost);
+	std::cout << "необходимая длинна" << std::endl;
+	std::cin >> _size; /*throw std::domain_error("Мощьность коммутатора задана неверно"*/
 }
 	

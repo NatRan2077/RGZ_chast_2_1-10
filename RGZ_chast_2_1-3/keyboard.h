@@ -1,28 +1,27 @@
+
 #pragma once
+#include "UltraClass.h"
 #include <string>
 #include <stdexcept>
 #include <iostream>
 
-class KeyBord //Компьютерные мышки
+class KeyBord :public UClass 
 {
 private:
-	std::string Kfirm; //Название фирмы-производителя
-	int Kbutton; //Количество  кнопок
-	int Kcost; //Цена
-	int size; // герц
+	int _size; // герц
 
-	void init(std::string Kfirm, int Kbutton, int Kcoast, int size); //Метод для инициализации полей класса
-
+	
+	void init(std::string _firm, int _button, int _coast, int _size); //Метод для инициализации полей класса
 public:
-	KeyBord(std::string firm, int button, int cost, int size); //Конструктор инициализации  
+	
+	KeyBord(std::string _firm, int _button, int _cost, int _size); //Конструктор инициализации  
 
-	KeyBord(KeyBord& m); //Конструктор копирования
 
-	KeyBord(); //Конструктор по умолчанию
+
+//	KeyBord(); //Конструктор по умолчанию
 
 	void Kprint(); //Метод, выводящий сведения об экземпляре класса
-
-	void setCoastK(int Kcost);
-	void setSize(int size);
+                                                                                                                    // сохр плохо без мб трабл будут 
+	void setSize();
 
 };

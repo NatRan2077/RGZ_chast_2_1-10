@@ -1,47 +1,30 @@
 #include "Monitor.h"
+#include "UltraClass.h"
 
-
-void Monik::init(std::string firm, int button, int coast, int Gz)
+void Monik::init(std::string _firm, int _button, int _cost, int _Gz)
 {
-	if (firm == "") throw std::invalid_argument("Название фирмы пустое.");
-	if (button < 0) throw std::domain_error("Неккоректное количество дополнительных кнопок.");
-	if (coast <= 0) throw std::domain_error("Неккоректная цена.");
-	if (coast <= 0) throw std::domain_error("Неккоректная цена.");
-	this->firm = firm;
-	this->button = button;
-	this->cost = coast;
-	this->Gz = Gz;
+	UClass::init(_button, _firm, _cost);
+	if (_Gz < 0) throw std::domain_error("Неккоректная цена.");
+	this->	_Gz = _Gz;
 }
 
-Monik::Monik(std::string firm, int button, int cost, int Gz)
+Monik::Monik(std::string _firm, int _button, int _cost, int _Gz) : UClass{ _button, _firm, _cost }
 {
-	init(firm, button, cost, Gz);
-}
-
-Monik::Monik(Monik& m) {
-	init(m.firm, m.button, m.cost, m.Gz);
-}
-// дефолт поля потом отвалятся 
-Monik::Monik() {
-	this->firm = "NoName";
-	this->button = 0;
-	this->cost = 1000;
-	this->Gz = 0;
+	init(_firm, _button, _cost, _Gz);
 }
 
 
 
-void Monik::print()
+void Monik::Kprint()
 {
-	std::cout << "Фирма - производитель: " << this->firm << ". Количество доп. кнопок:" << this->button << ". Цена:" << this->cost << ". Герцов:" << this->Gz << "\n";
+	UClass::printUC();
+	std::cout << ". Gz:" << this->_Gz << "\n";
 }
 
 
-void Monik::setCoast(int cost)
+
+void Monik::setGz()
 {
-	init(this->firm, this->button,this->Gz, cost);
-}
-void Monik::setGz(int Gz)
-{
-	init(this->firm, this->button, Gz, this-> cost);
+	std::cout << "необходимая длинна" << std::endl;
+	std::cin >> _Gz; 
 }

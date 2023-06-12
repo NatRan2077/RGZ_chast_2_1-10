@@ -134,6 +134,8 @@
     <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Monitor.cpp" />
+    <ClCompile Include="UltraClass.cpp" />
+    <ClCompile Include="UltraClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

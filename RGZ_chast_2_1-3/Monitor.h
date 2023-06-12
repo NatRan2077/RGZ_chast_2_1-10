@@ -1,28 +1,25 @@
 
 #pragma once
+#include "UltraClass.h"
 #include <string>
 #include <stdexcept>
 #include <iostream>
 
-class Monik //Компьютерные мышки
+class Monik :public UClass
 {
 private:
-	std::string firm; //Название фирмы-производителя
-	int button; //Количество  кнопок
-	int cost; //Цена
-	int Gz; // герц
-
-	void init(std::string firm, int button, int coast, int Gz); //Метод для инициализации полей класса
-
+	int _Gz; // герц
 public:
-	Monik(std::string firm, int button, int cost, int Gz); //Конструктор инициализации  
 
-	Monik(Monik& m); //Конструктор копирования
+	void init(std::string _firm, int _button, int _cost, int _Gz); //Метод для инициализации полей класса
 
-	Monik(); //Конструктор по умолчанию
+	Monik(std::string _firm, int _button, int _cost, int _Gz); //Конструктор инициализации  
 
-	void print(); //Метод, выводящий сведения об экземпляре класса
+	//Monik(Monik& m); //Конструктор копирования
 
-	void setCoast(int cost);
-	void setGz(int Gz);
+    //Monik(); //Конструктор по умолчанию
+
+	void Kprint(); //Метод, выводящий сведения об экземпляре класса
+
+	void setGz(); // установление цен ы и Гц
 };
